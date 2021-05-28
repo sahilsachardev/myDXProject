@@ -6,8 +6,8 @@
     <externalId>true</externalId>
     <label>Acme Bank Unique ID (ABID)</label>
     <length>12</length>
-    <required>true</required>
-    <trackHistory>false</trackHistory>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>true</unique>

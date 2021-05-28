@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Active_Accounts</fullName>
-    <columns>OBJECT_ID</columns>
+    <columns>Acme_Bank_Unique_ID__c</columns>
     <columns>NAME</columns>
     <columns>IsActive__c</columns>
     <columns>Balance_Amount__c</columns>
