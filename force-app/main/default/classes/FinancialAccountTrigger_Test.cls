@@ -1,10 +1,15 @@
 @isTest
 public class FinancialAccountTrigger_Test {
 	
-    @isTest
-    public static void generateABID_Test(){
+    @testSetup
+    public static void setUpData(){
+        
         //Test Setup
         General_Configurations__c genConfig =  TestDataFactory.creategenralConfiguration();
+    }
+    
+    @isTest
+    public static void generateABID_Test(){
             
         //Test Scenario
         Test.startTest();
@@ -14,9 +19,7 @@ public class FinancialAccountTrigger_Test {
     }
     @isTest
     public static void generateABID_TestBulk(){
-        //Test Setup
-        General_Configurations__c genConfig =  TestDataFactory.creategenralConfiguration();
-            
+    
         //Test Scenario
         Test.startTest();
         List<Financial_Accounts__c> financialAccRec = TestDataFactory.createFinancialAcc(500);
