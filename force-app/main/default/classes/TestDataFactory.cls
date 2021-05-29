@@ -47,18 +47,18 @@ public class TestDataFactory {
         Database.insert(finantialAccounts);
         return finantialAccounts;
     }
-    public static List<ACME_Transaction_History__b> createTransactionHistory(Integer count){
+    public static List<ACME_TransactionHistory__b> createTransactionHistory(Integer count){
         
-        List<ACME_Transaction_History__b> transactionHistoryList = new List<ACME_Transaction_History__b>();
+        List<ACME_TransactionHistory__b> transactionHistoryList = new List<ACME_TransactionHistory__b>();
         Financial_Accounts__c financialAcc = createFinancialAcc();
             
         for(Integer i=0; i<count; i++){
-            ACME_Transaction_History__b transactionHistoryRecds = new ACME_Transaction_History__b();
+            ACME_TransactionHistory__b transactionHistoryRecds = new ACME_TransactionHistory__b();
             transactionHistoryRecds.ABID__c = Utility.getUniqueId('ABID');
             transactionHistoryRecds.AccountNumber__c = Integer.valueOf(String.ValueOf(System.Now()).replaceAll('[-: ]','').substring(3, 12));
             transactionHistoryRecds.Amount__c = 150.25;
             transactionHistoryRecds.Currency__c = 'AUD';
-            transactionHistoryRecds.Financial_Account__c = financialAcc.Id;
+            //transactionHistoryRecds.Financial_Account__c = financialAcc.Id;
             transactionHistoryRecds.MerchantABN__c = 123456789;
             transactionHistoryRecds.MerchantBSB__c = 123456;
             transactionHistoryRecds.MerchantName__c = 'Beau Flowers';

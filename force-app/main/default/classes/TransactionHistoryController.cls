@@ -1,4 +1,4 @@
-@RestResource(urlMapping='/api/ACME_Transaction_History__b/*')
+@RestResource(urlMapping='/api/ACME_TransactionHistory__b/*')
 global with sharing class TransactionHistoryController
 {
     @HttpPost
@@ -8,14 +8,14 @@ global with sharing class TransactionHistoryController
         transactionDataList = (List<TransactionHistoryWrapper>)JSON.deserialize(data, List<TransactionHistoryWrapper>.class);        
         system.debug('>>transactionDataList>> '+transactionDataList);
         
-        List<ACME_Transaction_History__b> transactionHistoryList = new List<ACME_Transaction_History__b>();  
+        List<ACME_TransactionHistory__b> transactionHistoryList = new List<ACME_TransactionHistory__b>();  
         List<Database.SaveResult> saveResults = new List<Database.SaveResult>();
         General_Configurations__c genConfig = General_Configurations__c.getValues('TransactionId');
         String response;
         
         if(!transactionDataList.isEmpty()){
             for(TransactionHistoryWrapper transactionData :transactionDataList){
-                ACME_Transaction_History__b transactionHistoryRec = new ACME_Transaction_History__b();
+                ACME_TransactionHistory__b transactionHistoryRec = new ACME_TransactionHistory__b();
                 transactionHistoryRec.ABID__c = transactionData.abid.deleteWhitespace();
                 transactionHistoryRec.Amount__c = transactionData.amount;
                 transactionHistoryRec.Currency__c = transactionData.transactionCurrency.trim();
