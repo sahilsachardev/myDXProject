@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Financial Account</label>
     <referenceTo>Financial_Accounts__c</referenceTo>
-    <relationshipName>Transaction_History</relationshipName>
+    <relationshipName>TransactionHistory</relationshipName>
     <required>false</required>
     <type>Lookup</type>
 </CustomField>

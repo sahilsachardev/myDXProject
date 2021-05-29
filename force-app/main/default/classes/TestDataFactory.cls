@@ -11,7 +11,6 @@ public class TestDataFactory {
                                                                            );
         insert genConfig;
         return genConfig;
-        
     }
     
     public static Financial_Accounts__c createFinancialAcc(){
@@ -48,5 +47,27 @@ public class TestDataFactory {
         Database.insert(finantialAccounts);
         return finantialAccounts;
     }
-
+    public static List<TransactionHistory__b> createTransactionHistory(Integer count){
+        
+        List<TransactionHistory__b> transactionHistoryList = new List<TransactionHistory__b>();
+        Financial_Accounts__c financialAcc = createFinancialAcc();
+            
+        for(Integer i=0; i<count; i++){
+            TransactionHistory__b transactionHistoryRecds = new TransactionHistory__b();
+            transactionHistoryRecds.ABID__c = Utility.getABID('ABID');
+            transactionHistoryRecds.AccountNumber__c = Integer.valueOf(String.ValueOf(System.Now()).replaceAll('[-: ]','').substring(3, 12));
+            transactionHistoryRecds.Amount__c = 150.25;
+            transactionHistoryRecds.Currency__c = 'AUD';
+            transactionHistoryRecds.Financial_Account__c = financialAcc.Id;
+            transactionHistoryRecds.MerchantABN__c = 123456789;
+            transactionHistoryRecds.MerchantBSB__c = 123456;
+            transactionHistoryRecds.MerchantName__c = 'Beau Flowers';
+            transactionHistoryRecds.Type__c = 'debit';
+            transactionHistoryRecds.Transaction_Date__c = Datetime.newInstance(2021,1,10);
+            
+            transactionHistoryList.add(transactionHistoryRecds);
+        }
+        Database.insertAsync(transactionHistoryList);
+        return transactionHistoryList;
+    }
 }

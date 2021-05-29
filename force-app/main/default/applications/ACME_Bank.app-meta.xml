@@ -4,7 +4,7 @@
         <headerColor>#0070D2</headerColor>
         <logo>acmebanklogo</logo>
         <logoVersion>1</logoVersion>
-        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
     <description>ACME Bank Financial Accounts</description>
     <formFactors>Small</formFactors>
@@ -13,6 +13,8 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>ACME Bank</label>
     <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
     <tabs>Financial_Accounts__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>ACME_Bank_UtilityBar</utilityBar>
