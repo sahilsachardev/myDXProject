@@ -2,6 +2,6 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Object to store customers Transaction Records.</description>
-    <label>ACME Transaction History</label>
-    <pluralLabel>ACME Transaction History</pluralLabel>
+    <label>ACME Transaction History Old</label>
+    <pluralLabel>ACME Transaction History Old</pluralLabel>
 </CustomObject>

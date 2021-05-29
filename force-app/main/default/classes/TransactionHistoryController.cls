@@ -1,25 +1,21 @@
-@RestResource(urlMapping='/api/TransactionHistory__b/*')
+@RestResource(urlMapping='/api/ACME_Transaction_History__b/*')
 global with sharing class TransactionHistoryController
 {
     @HttpPost
     global static String doPost() {
-        system.debug('>>postTransactionHistory>>');
-        //TransactionHistoryWrapper transactionData = new TransactionHistoryWrapper();
-        //transactionData = data;
         String data = RestContext.request.requestBody.toString();
         List<TransactionHistoryWrapper> transactionDataList = new List<TransactionHistoryWrapper>();
-        transactionDataList = (List<TransactionHistoryWrapper>)JSON.deserialize(data, List<TransactionHistoryWrapper>.class);
-        //TransactionHistoryWrapper transactionData = (TransactionHistoryWrapper)JSON.deserializeStrict(data, TransactionHistoryWrapper.class);
-        
+        transactionDataList = (List<TransactionHistoryWrapper>)JSON.deserialize(data, List<TransactionHistoryWrapper>.class);        
         system.debug('>>transactionDataList>> '+transactionDataList);
         
-        List<TransactionHistory__b> transactionHistoryList = new List<TransactionHistory__b>();  
+        List<ACME_Transaction_History__b> transactionHistoryList = new List<ACME_Transaction_History__b>();  
         List<Database.SaveResult> saveResults = new List<Database.SaveResult>();
+        General_Configurations__c genConfig = General_Configurations__c.getValues('TransactionId');
         String response;
         
         if(!transactionDataList.isEmpty()){
             for(TransactionHistoryWrapper transactionData :transactionDataList){
-                TransactionHistory__b transactionHistoryRec = new TransactionHistory__b();
+                ACME_Transaction_History__b transactionHistoryRec = new ACME_Transaction_History__b();
                 transactionHistoryRec.ABID__c = transactionData.abid.deleteWhitespace();
                 transactionHistoryRec.Amount__c = transactionData.amount;
                 transactionHistoryRec.Currency__c = transactionData.transactionCurrency.trim();
@@ -28,15 +24,19 @@ global with sharing class TransactionHistoryController
                 transactionHistoryRec.MerchantABN__c = transactionData.merchantABN;
                 transactionHistoryRec.MerchantBSB__c = transactionData.merchantBSB;
                 transactionHistoryRec.MerchantName__c = transactionData.merchantName;
+                transactionHistoryRec.Transaction_Id__c = genConfig.NumericValue__c+1;
+                
                 
                 transactionHistoryList.add(transactionHistoryRec);
+                genConfig.NumericValue__c += 1;
             }
             
         }
                               
         //try{
-            if(!transactionHistoryList.isEmpty())
+        if(!transactionHistoryList.isEmpty()){
             saveResults = Database.insertImmediate(transactionHistoryList); 
+            update genConfig;
         	system.debug('>>saveResults>>'+saveResults);
             for (Database.SaveResult result : saveResults) {
                 if (result.isSuccess()) {
@@ -46,6 +46,7 @@ global with sharing class TransactionHistoryController
                     break;
                 }
             }
+        }
         //}catch(Exception err){
         //    System.debug('Exception!! - '+err.getMessage());
         //}

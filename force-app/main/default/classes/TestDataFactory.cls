@@ -17,7 +17,7 @@ public class TestDataFactory {
         
         Financial_Accounts__c finantialAcc = new Financial_Accounts__c();
         finantialAcc.Account_Number__c = 123456789;
-        finantialAcc.Address__c = 'Sydney 2000, NSW, Australia';
+        finantialAcc.Address__c = 'Sydney 2000, NSW, Australia'; 
         finantialAcc.Balance_Amount__c = 0;
         finantialAcc.Email__c = 'sam.test@test.com';
         finantialAcc.IsActive__c = true;
@@ -47,14 +47,14 @@ public class TestDataFactory {
         Database.insert(finantialAccounts);
         return finantialAccounts;
     }
-    public static List<TransactionHistory__b> createTransactionHistory(Integer count){
+    public static List<ACME_Transaction_History__b> createTransactionHistory(Integer count){
         
-        List<TransactionHistory__b> transactionHistoryList = new List<TransactionHistory__b>();
+        List<ACME_Transaction_History__b> transactionHistoryList = new List<ACME_Transaction_History__b>();
         Financial_Accounts__c financialAcc = createFinancialAcc();
             
         for(Integer i=0; i<count; i++){
-            TransactionHistory__b transactionHistoryRecds = new TransactionHistory__b();
-            transactionHistoryRecds.ABID__c = Utility.getABID('ABID');
+            ACME_Transaction_History__b transactionHistoryRecds = new ACME_Transaction_History__b();
+            transactionHistoryRecds.ABID__c = Utility.getUniqueId('ABID');
             transactionHistoryRecds.AccountNumber__c = Integer.valueOf(String.ValueOf(System.Now()).replaceAll('[-: ]','').substring(3, 12));
             transactionHistoryRecds.Amount__c = 150.25;
             transactionHistoryRecds.Currency__c = 'AUD';
@@ -64,6 +64,7 @@ public class TestDataFactory {
             transactionHistoryRecds.MerchantName__c = 'Beau Flowers';
             transactionHistoryRecds.Type__c = 'debit';
             transactionHistoryRecds.Transaction_Date__c = Datetime.newInstance(2021,1,10);
+            transactionHistoryRecds.Transaction_Id__c = Integer.ValueOf(Utility.getUniqueId('Transaction_Id__c'));
             
             transactionHistoryList.add(transactionHistoryRecds);
         }
