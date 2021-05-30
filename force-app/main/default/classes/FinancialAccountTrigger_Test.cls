@@ -13,7 +13,7 @@ public class FinancialAccountTrigger_Test {
             
         //Test Scenario
         Test.startTest();
-        Financial_Accounts__c financialAccRec = TestDataFactory.createFinancialAcc();
+        Financial_Accounts__c financialAccRec = TestDataFactory.createFinancialAcc('');
         system.assert(financialAccRec.Acme_Bank_Unique_ID__c != null || financialAccRec.Acme_Bank_Unique_ID__c != '');
         Test.stopTest();
     }

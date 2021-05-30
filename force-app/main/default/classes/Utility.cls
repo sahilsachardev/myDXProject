@@ -10,7 +10,12 @@ public class Utility {
         } while(randomCount == 0);
         Integer TransactionNo = Integer.valueOf(genConfig.NumericValue__c + randomCount);
         UniqueId = String.valueOf(TransactionNo);
-        UniqueId = UniqueId.length()>9?genConfig.TextValue__c+UniqueId.substring(UniqueId.length() - 9):genConfig.TextValue__c+UniqueId;
+        if(genConfig.Name == 'ABID'){
+        	UniqueId = UniqueId.length()>9?genConfig.TextValue__c+UniqueId.substring(UniqueId.length() - 9):genConfig.TextValue__c+UniqueId;
+        }else{
+            UniqueId = UniqueId;
+        }
+        
         genConfig.NumericValue__c = TransactionNo;        
         update genConfig;
         return UniqueId;

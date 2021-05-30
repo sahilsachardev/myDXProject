@@ -1,18 +1,17 @@
-global class TransactionHistoryWrapper {
+public class TransactionHistoryWrapper {
     
-    global String abid;
-    global Integer accountNumber;
-    global Decimal amount;
-    global String transactionCurrency;
-    global Date transactiondate;
-    global Integer merchantABN;
-    global Integer merchantBSB;
-    global String merchantName;
-    global Time transactiontime;
-    global String transactionType;
+    public String abid;
+    public Integer accountNumber;
+    public Decimal amount;
+    public String transactionCurrency;
+    public Date transactiondate;
+    public Integer merchantABN;
+    public Integer merchantBSB;
+    public String merchantName;
+    public Time transactiontime;
+    public String transactionType;
     
-    /*
-     global TransactionHistoryWrapper() {
+    public TransactionHistoryWrapper() {
         this.abid = '';
         this.accountNumber = 0;
         this.amount = 0.0;
@@ -24,6 +23,4 @@ global class TransactionHistoryWrapper {
         this.transactiontime = Time.newInstance(1, 1, 1, 111);
         this.transactionType = '';
     }
-*/
-
 }

@@ -67,6 +67,9 @@ global with sharing class TransactionHistoryController
                               
         try{
             if(!transactionHistoryList.isEmpty()){
+                //Asynchronous DMl Operations are not enable in this Org.
+                //Considering insertion synchronously. 
+                if(!Test.isRunningTest())
                 saveResults = Database.insertImmediate(transactionHistoryList); 
                 if(!newfinAccs.isEmpty())
                 insert newfinAccs;
