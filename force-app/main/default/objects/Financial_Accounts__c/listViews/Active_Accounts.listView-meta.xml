@@ -7,6 +7,7 @@
     <columns>Balance_Amount__c</columns>
     <columns>RECORDTYPE</columns>
     <columns>Type__c</columns>
+    <columns>Balance_Calculation__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>IsActive__c</field>

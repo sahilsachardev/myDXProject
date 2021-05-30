@@ -5,6 +5,17 @@
     <description>Financial Account of Individual Customers</description>
     <label>Individuals</label>
     <picklistValues>
+        <picklist>Balance_Calculation__c</picklist>
+        <values>
+            <fullName>Calculated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Type__c</picklist>
         <values>
             <fullName>Credit</fullName>
