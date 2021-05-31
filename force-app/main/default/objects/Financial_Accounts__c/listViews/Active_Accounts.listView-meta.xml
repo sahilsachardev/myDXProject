@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Accounts</fullName>
+    <columns>Acme_Bank_Unique_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>IsActive__c</columns>
+    <columns>Balance_Amount__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Type__c</columns>
+    <columns>Balance_Calculation__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IsActive__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Active Accounts</label>
+</ListView>

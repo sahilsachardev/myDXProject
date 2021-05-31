@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ABIDCannotbeUpdated</fullName>
+    <active>true</active>
+    <errorConditionFormula>PRIORVALUE(Acme_Bank_Unique_ID__c) != null &amp;&amp;  ISCHANGED(Acme_Bank_Unique_ID__c)</errorConditionFormula>
+    <errorDisplayField>Acme_Bank_Unique_ID__c</errorDisplayField>
+    <errorMessage>Custome ABID cannot be Updated.</errorMessage>
+</ValidationRule>
