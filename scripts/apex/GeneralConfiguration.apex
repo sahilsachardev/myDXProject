@@ -8,6 +8,7 @@ General_Configurations__c genConfig = new General_Configurations__c(Name = 'Tran
                                                                     NumericValue__c=100001
                                                                    );
 genConfiglist.add(genConfig);
+insert genConfiglist;
 
 General_Configurations__c genConfig2 = new General_Configurations__c(Name = 'ABID',
                                                                             FieldName__c = 'Acme_Bank_Unique_ID__c',
@@ -18,4 +19,4 @@ General_Configurations__c genConfig2 = new General_Configurations__c(Name = 'ABI
 genConfiglist.add(genConfig2);
 
 
-insert genConfiglist;
+insert genConfig2;

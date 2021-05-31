@@ -8,6 +8,7 @@
     <columns>RECORDTYPE</columns>
     <columns>Type__c</columns>
     <columns>Balance_Calculation__c</columns>
+    <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>IsActive__c</field>
