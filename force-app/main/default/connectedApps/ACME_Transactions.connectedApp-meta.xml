@@ -4,7 +4,7 @@
     <label>ACME Transactions</label>
     <oauthConfig>
         <callbackUrl>https://login.salesforce.com/services/oauth2/success</callbackUrl>
-        <consumerKey>3MVG9e2mBbZnmM6mB2yJqiNXpa.mcXk_DVKwskSZlU5I9mG0a7Cq4.o2H7NfzTHD575SOlbLOQiQpggWVF.GR</consumerKey>
+        <consumerKey></consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isConsumerSecretOptional>false</isConsumerSecretOptional>
         <isIntrospectAllTokens>false</isIntrospectAllTokens>

@@ -71,10 +71,12 @@ global with sharing class TransactionHistoryController
                 //Considering insertion synchronously. 
                 if(!Test.isRunningTest())
                 saveResults = Database.insertImmediate(transactionHistoryList); 
-                if(!newfinAccs.isEmpty())
+                if(!newfinAccs.isEmpty()){
                 insert newfinAccs;
-                if(!updatedfinAccs.isEmpty())
+                }
+                if(!updatedfinAccs.isEmpty()){
                 update updatedfinAccs;
+                }
                 update genConfig;
                 system.debug('>>saveResults>>'+saveResults);
                 for (Database.SaveResult result : saveResults) {

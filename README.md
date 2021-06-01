@@ -20,7 +20,7 @@ Step 2: SAVE
 
 Method = [POST]
 
-[URL_Instance]services/oauth2/token?grant_type=password&client_id=[Consumer_Key]&client_secret=[Client_secret]&&username=iuser@acme.com&password=integrationuser123
+[URL_Instance]services/oauth2/token?grant_type=password&client_id=[Consumer_Key]&client_secret=[Client_secret]&&username=iuser@acme.com.scratchorg&password=integrationuser123
 
 Map below strings [] or [URL_Instance] with the relevant value
 [URL_Instance]  = Domain URL.
@@ -28,7 +28,7 @@ Consumer_Key    = Consumer Key from Connected App.
 Client_secret   = Client secret from Connect App.
 
 Eg: Please refer below link to access my current Scratch Org.
-URL:    [https://business-flow-21732-dev-ed.cs6.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9e2mBbZnmM6mB2yJqiNXpa.mcXk_DVKwskSZlU5I9mG0a7Cq4.o2H7NfzTHD575SOlbLOQiQpggWVF.GR&client_secret=2D6876349F96B10A9CA0005A4A69A7924576681123A49B50FDDE62EF59709024&username=iuser@acme.com&password=integrationuser123]
+URL:    [https://business-flow-21732-dev-ed.cs6.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9e2mBbZnmM6mB2yJqiNXpa.mcXk_DVKwskSZlU5I9mG0a7Cq4.o2H7NfzTHD575SOlbLOQiQpggWVF.GR&client_secret=2D6876349F96B10A9CA0005A4A69A7924576681123A49B50FDDE62EF59709024&username=iuser@acme.com.scratchorg&password=integrationuser123]
 
 ## Expected Response . Please note access_token
 {
