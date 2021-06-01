@@ -1,3 +1,7 @@
+## Some Limitations and considerations
+- DML Operations on Transaction_History__b (Big Object) could have been an Asynchronous executions, but is currently set as synchronous (insertimmediate) as Async Operation (Asyncinsert) was not enabled in the scratch Org.
+- Person Accounts should have been an ideal solutoin to link Financial_Account__c (custom Object) records. However, to enable Person Account we need to contact Salesforce Support. Please consider Finantial_Account__c implementation similar to Person Accounts.
+
 ## Setup Integration to Perform Transaction History request.
 
 ### Setup Connect App
