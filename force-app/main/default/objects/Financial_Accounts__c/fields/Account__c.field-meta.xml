@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Balance_Amount__c</fullName>
-    <defaultValue>0</defaultValue>
-    <description>Calculated Balance Amount of customers</description>
+    <fullName>Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Balance Amount</label>
-    <precision>18</precision>
+    <label>Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Financial Accounts</relationshipLabel>
+    <relationshipName>Financial_Accounts</relationshipName>
     <required>false</required>
-    <scale>2</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Lookup</type>
 </CustomField>

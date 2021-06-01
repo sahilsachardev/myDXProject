@@ -1,3 +1,13 @@
+/********************************************************************************
+ * @Class name:    FinancialAccountTriggerHandler
+ * @description:   Financial Account Trigger Handler to perform all the logics.
+ * @testclass:     FinancialAccountTrigger_Test
+ * @trigger:       FinancialAccount_Trigger
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+*********************************************************************************/
+
 public without sharing class FinancialAccountTriggerHandler {
     
     public static void generateABID(List <Financial_Accounts__c> financialAccounts){
@@ -8,6 +18,10 @@ public without sharing class FinancialAccountTriggerHandler {
         Integer randomCount = 0;        
         for(Financial_Accounts__c accountRec :financialAccounts){
            
+            //Generate Unique ABID
+            //Below code will generate a unique 2 digit number and add it to the custom setting neumeric value which will give a unique 9 digit ABIDs and add Text value as a prefix.
+            // Eg: XXX1000000029
+            //ABID getting generated within Salesforce can be differentiated with the ABIDs getting populated from Transaction History service request by the first three characters.
             if(accountRec.Acme_Bank_Unique_ID__c == null){
                 do{
                     randomCount = Math.round(Math.random()*99);

@@ -14,7 +14,7 @@
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Post Finantial Account</label>
+        <label>Publish Financial Accounts</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
         <actionName>chatterPost</actionName>
@@ -46,7 +46,7 @@ Email and Phone:  {!myVariable_current.Email__c}  and  {!myVariable_current.Phon
         <inputParameters>
             <name>subjectNameOrId</name>
             <value>
-                <stringValue>0F9N0000000DRDFKA4</stringValue>
+                <stringValue>0F96D0000000EpISAU</stringValue>
             </value>
         </inputParameters>
     </actionCalls>

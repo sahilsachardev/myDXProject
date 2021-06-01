@@ -1,3 +1,13 @@
+/**********************************************************************************************
+ * @Class name:     TransactionHistoryController
+ * @description:    With sharing api service to populate Transaction History and Financial 
+                    Account records when a POST request reaches. This is an Idempotent service
+                    and duplicate transactions will not create another record.
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
+
 @RestResource(urlMapping='/api/ACME_TransactionHistory__b/*')
 global with sharing class TransactionHistoryController
 {
@@ -31,7 +41,7 @@ global with sharing class TransactionHistoryController
                 transactionHistoryRec.MerchantName__c = transactionData.merchantName;
                 transactionHistoryRec.Transaction_Id__c = genConfig.NumericValue__c+1;
                 
-                //Populate New Financial Accounts
+                //Populate New Financial Accounts for new ABIDs.
                 Financial_Accounts__c financialAccRec = new Financial_Accounts__c();
                 financialAccRec.Acme_Bank_Unique_ID__c = transactionData.abid.deleteWhitespace();
                 financialAccRec.Account_Number__c = transactionData.accountNumber;
@@ -71,12 +81,13 @@ global with sharing class TransactionHistoryController
                 //Considering insertion synchronously. 
                 if(!Test.isRunningTest())
                 saveResults = Database.insertImmediate(transactionHistoryList); 
-                if(!newfinAccs.isEmpty())
+                if(!newfinAccs.isEmpty()){
                 insert newfinAccs;
-                if(!updatedfinAccs.isEmpty())
+                }
+                if(!updatedfinAccs.isEmpty()){
                 update updatedfinAccs;
+                }
                 update genConfig;
-                system.debug('>>saveResults>>'+saveResults);
                 for (Database.SaveResult result : saveResults) {
                     if (result.isSuccess()) {
                         response = 'Success';
