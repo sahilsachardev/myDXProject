@@ -6,6 +6,7 @@
     <inlineHelpText>Enter Address</inlineHelpText>
     <label>Address</label>
     <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>TextArea</type>
