@@ -1,3 +1,11 @@
+/**********************************************************************************************
+ * @Class name:     TransactionHistoryController_Test
+ * @description:    Test Class for TransactionHistoryController Class.
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
+
 @isTest
 public class TransactionHistoryController_Test {	
     

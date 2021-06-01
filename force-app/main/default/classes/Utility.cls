@@ -1,3 +1,11 @@
+/**********************************************************************************************
+ * @Class name:     Utility
+ * @description:    Class to list reusable logics.
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
+
 public class Utility {
     
     public static String getUniqueId(String FieldName){

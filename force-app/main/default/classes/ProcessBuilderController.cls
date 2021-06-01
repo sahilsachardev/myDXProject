@@ -1,3 +1,13 @@
+/**********************************************************************************************
+ * @Class name:     ProcessBuilderController
+ * @description:    Peform apex related logics.
+ * @testclass:      FinancialAccountTrigger_Test and TransactionHistoryController_Test
+ * @processbuilder: Financial_Account_Process.flow
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
+
 public class ProcessBuilderController {
 	
     @InvocableMethod

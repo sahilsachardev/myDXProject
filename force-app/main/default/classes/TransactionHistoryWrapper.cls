@@ -1,3 +1,11 @@
+/**********************************************************************************************
+ * @Class name:     TransactionHistoryWrapper
+ * @description:    Wrapper Class to deserialize JSON from TransactionHistory Service.
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
+
 public class TransactionHistoryWrapper {
     
     public String abid;

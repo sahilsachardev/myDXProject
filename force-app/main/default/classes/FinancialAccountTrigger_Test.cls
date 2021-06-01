@@ -1,3 +1,10 @@
+/**********************************************************************************************
+ * @Class name:     FinancialAccountTrigger_Test
+ * @description:    Test Class for FinancialAccount_Trigger Trigger.
+ * HISTORY *
+ ===========
+ Auther         Date                Comment
+***********************************************************************************************/
 @isTest
 public class FinancialAccountTrigger_Test {
 	
